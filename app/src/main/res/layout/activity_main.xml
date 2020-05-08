@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+
+        <EditText
+            android:id="@+id/et_mata_uang_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:hint="Masukkan nominal uang"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:hint="From"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_mata_uang_1" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="To"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/spinner1"
+            app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Button
+            android:id="@+id/btn_convert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="Convert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+
+<!--        di hilangkan-->
+        <TextView
+            android:id="@+id/tv_hasil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Hasil :"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/btn_convert"
+            app:layout_constraintTop_toBottomOf="@+id/btn_convert" />
+
+        <TextView
+            android:id="@+id/tv_mata_uang_result1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="USD (US Dollar)"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/tv_hasil"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hasil" />
+
+        <TextView
+            android:id="@+id/tv_equals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" = "
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_mata_uang_result1"
+            app:layout_constraintStart_toEndOf="@+id/tv_mata_uang_result1"
+            app:layout_constraintTop_toTopOf="@+id/tv_mata_uang_result1" />
+
+        <TextView
+            android:id="@+id/tv_hasil_uang_awal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_equals"
+            app:layout_constraintStart_toEndOf="@+id/tv_equals"
+            app:layout_constraintTop_toTopOf="@+id/tv_equals" />
+
+        <TextView
+            android:id="@+id/tv_mata_uang_result2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="IDR (Indonesian Rupiah)"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/tv_mata_uang_result1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mata_uang_result1" />
+
+        <TextView
+            android:id="@+id/tv_equals2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" = "
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_mata_uang_result2"
+            app:layout_constraintStart_toEndOf="@+id/tv_mata_uang_result2"
+            app:layout_constraintTop_toTopOf="@+id/tv_mata_uang_result2" />
+
+        <TextView
+            android:id="@+id/tv_hasil_uang_akhir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="178.449"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_equals2"
+            app:layout_constraintStart_toEndOf="@+id/tv_equals2"
+            app:layout_constraintTop_toTopOf="@+id/tv_equals2" />
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Reset"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/tv_mata_uang_result2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mata_uang_result2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
